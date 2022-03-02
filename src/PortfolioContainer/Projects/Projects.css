@@ -1,0 +1,153 @@
+.top-container-projects{
+    margin-top: 100px;
+}
+
+.projects-container{
+    width: 70%;
+    margin: auto;
+    padding: 20px 10px ;
+    cursor: pointer;
+}
+
+.project1-container{
+    box-shadow: 0 0px 20px -2px #343852;
+}
+.project1-container:hover{
+    color: rgb(40, 39, 105);
+}
+.project2-container:hover{
+    color: rgb(40, 39, 105);
+}
+.project2-container{
+    box-shadow: 0 0px 20px -2px #343852;
+}
+
+.projects-sub-container{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+.projects-sub-container>div:hover{
+    background-color: rgb(250, 245, 245);
+}
+
+.img1{
+    width: 100%;
+}
+
+.img2{
+    width: 100%;
+}
+
+.image-container{
+    margin: 8px;
+}
+
+.project-title{
+    text-align: center;
+    font-size: 22px;   
+    padding: 5px;
+}
+
+.project-description{
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.tech-stack{
+    /* padding: 10px; */
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tech-stack >img{
+    width: 40px;
+}
+
+.deploy-btns{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.herokuImg{
+    height:43px !important;
+    padding-top: 4px;
+}
+
+.projBtn1{
+    border-radius: 50px;
+    padding: 4px 0;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: "Poppins SemiBold";
+    color: var(--white);
+    border: 2px solid rgb(87, 47, 85);
+    font-size: 12px;
+    background-color: #4f556d;
+}
+.projBtn1:hover{
+  background-color: #656877;
+  color: rgb(238, 133, 133);
+}
+
+.projBtn2{
+    margin-left: 4px;
+    border-radius: 50px;
+    padding: 4px 0;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: "Poppins SemiBold";
+    color: var(--white);
+    border: 2px solid rgb(87, 47, 85);
+    font-size: 12px;
+    background-color: #88608d;
+}
+.projBtn2:hover{
+  background-color:#ac7fb3;
+  color: rgb(80, 75, 160);
+}
+
+.colz i{
+    margin: 5px;
+    font-size: 1.23em
+}
+
+.colz i:hover {
+    transform: scale(1.9);
+  }
+
+.tech-stack>img:hover{
+    transform: scale(1.5);
+}  
+
+  @media only screen and (max-width: 910px) {
+    .projects-sub-container{
+        flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (max-width: 810px) {
+    .projects-sub-container{
+        flex-wrap: wrap;
+    }
+    .tech-stack{
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 428px) {
+    .projects-sub-container{
+        flex-wrap: wrap;
+    }
+    .tech-stack{
+        display: none;
+    }
+    .image-container{
+        display: none;
+    }
+  }
