@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Typical from "react-typical";
 import axios from "axios";
 import { toast } from "react-toastify";
+import emailjs from "emailjs-com";
 
 import imgBack from "../../../src/images/mailz.jpeg";
 import load1 from "../../../src/images/load2.gif";
@@ -22,6 +23,7 @@ export default function ContactMe(props) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [org, setOrg] = useState("");
   const [message, setMessage] = useState("");
   const [banner, setBanner] = useState("");
   const [bool, setBool] = useState(false);
@@ -35,33 +37,57 @@ export default function ContactMe(props) {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
-  console.log(name);
-  const submitForm = async (e) => {
+  const hadleOrg = (e) => {
+    setOrg(e.target.value);
+  };
+  const submitForm = (e) => {
     e.preventDefault();
-    try {
-      let data = {
-        name,
-        email,
-        message,
-      };
-      setBool(true);
-      const res = await axios.post(`/contact`, data);
-      if (name.length === 0 || email.length === 0 || message.length === 0) {
-        setBanner(res.data.msg);
-        toast.error(res.data.msg);
-        setBool(false);
-      } else if (res.status === 200) {
-        setBanner(res.data.msg);
-        toast.success(res.data.msg);
-        setBool(false);
-
-        setName("");
-        setEmail("");
-        setMessage("");
-      }
-    } catch (error) {
-      console.log(error);
+    console.log("NAME", name);
+    if (!name.length || !email.length || !org.length || !message.length) {
+      setBanner("Please Fill All The Fields");
+      toast.error("Please Fill All The Fields");
+      setBool(false);
+    } else {
+      console.log("MESSAGE SENT");
+      console.log(name, org, message, email);
+      emailjs
+        .sendForm(
+          "service_k0m5f0i",
+          "template_8nyadqe",
+          e.target,
+          "user_CXpNrZCPiYQuQglQ0TcPd"
+        )
+        .then((res) => console.log(res));
+      alert("Thank you for contacting me !");
+      setName("");
+      setOrg("");
+      setMessage("");
+      setEmail("");
     }
+    // try {
+    //   let data = {
+    //     name,
+    //     email,
+    //     message,
+    //   };
+    //   setBool(true);
+    //   const res = await axios.post(`/contact`, data);
+    //   if (name.length === 0 || email.length === 0 || message.length === 0) {
+    //     setBanner(res.data.msg);
+    //     toast.error(res.data.msg);
+    //     setBool(false);
+    //   } else if (res.status === 200) {
+    //     setBanner(res.data.msg);
+    //     toast.success(res.data.msg);
+    //     setBool(false);
+
+    //     setName("");
+    //     setEmail("");
+    //     setMessage("");
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (
@@ -99,18 +125,31 @@ export default function ContactMe(props) {
           <div className="img-back">
             <h4>Send Your Email Here!</h4>
             <img src={imgBack} alt="image not found" />
-            <div className="mobile_no">Contact No:- +91 73898821887</div>
+            <div className="mobile_no">Contact No:- +91 7389821887</div>
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor="name">Name</label>
-            <input type="text" onChange={handleName} value={name} />
+            <input type="text" onChange={handleName} name="name" value={name} />
 
             <label htmlFor="email">Email</label>
-            <input type="email" onChange={handleEmail} value={email} />
+            <input
+              type="email"
+              onChange={handleEmail}
+              name="email"
+              value={email}
+            />
+
+            <label htmlFor="org">Organization</label>
+            <input type="org" onChange={hadleOrg} name="org" value={org} />
 
             <label htmlFor="message">Message</label>
-            <textarea type="text" onChange={handleMessage} value={message} />
+            <textarea
+              type="message"
+              onChange={handleMessage}
+              name="message"
+              value={message}
+            />
 
             <div className="send-btn">
               <button type="submit">

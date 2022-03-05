@@ -80,7 +80,7 @@ const Resume = (props) => {
   const projectsDetails = [
     {
       title: "Clone of Meesho",
-      duration: { fromDate: "2021", toDate: "2021" },
+      duration: { fromDate: "2022", toDate: "2022" },
       description:
         "An Ecommerce website for selling fashion and lifestyle products.",
       subHeading:
@@ -147,8 +147,8 @@ const Resume = (props) => {
       <ResumeHeading
         heading={"12th"}
         subHeading={"Saket School Vidisha"}
-        fromDate={"2014"}
-        toDate={"2012"}
+        fromDate={"2012"}
+        toDate={"2014"}
       />
     </div>,
 
