@@ -70,7 +70,7 @@ export default function Profile() {
               Contact{" "}
             </button>
             <a
-              href="https://drive.google.com/file/d/1mRKUnI-MFTDsBftf6jKFl78Eahf_2d3G/view?usp=sharing"
+              href="https://drive.google.com/file/d/1VZvTwC6BQDZ4bwdWqXvnmEiYWAZeX2u1/view?usp=sharing"
               target="_blank"
             >
               <button className="btn highlighted-btn">Get Resume</button>
