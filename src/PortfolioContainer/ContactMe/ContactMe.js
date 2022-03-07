@@ -99,24 +99,21 @@ export default function ContactMe(props) {
             <Typical loop={Infinity} steps={["Get In Touch 📧", 1000]} />
           </h2>{" "}
           <a
-            href="https://www.linkedin.com/in/vaibhavkothiyal/"
+            href="https://www.linkedin.com/in/arpit-shrivastava-0a5227218/"
             target="_blank"
           >
             <i className="fa fa-linkedin" />
           </a>
           <a
-            href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=vaibhavkkothiyal@gmail.com&tf=1"
+            href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=arpitshrivastava764@gmail.com&tf=1"
             target="_blank"
           >
             <i className="fa fa-google-plus-square" />
           </a>
-          <a href="https://github.com/vaibhavkothiyal" target="_blank">
+          <a href="https://github.com/arpit1024" target="_blank">
             <i className="fa fa-github" />
           </a>
-          <a href="#" target="_blank">
-            <i className="fa fa-twitter" />
-          </a>
-          <a href="tel:9458175229" target="_blank">
+          <a href="tel:7389821887" target="_blank">
             <i className="fa fa-phone"></i>
           </a>
         </div>
